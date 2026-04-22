@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
+	<assemblyIdentity version="1.0.0.0" name="MyWinFormsApp.app" />
+
+	<!-- 
+    Thông tin mô tả ứng dụng (không bắt buộc)
+  -->
+	<description>Ứng dụng quản lý giao nhận bưu phẩm</description>
+
+	<!-- 
+    Yêu cầu quyền thực thi (User quyền bình thường, không cần admin)
+  -->
+	<trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
+		<security>
+			<requestedPrivileges>
+				<requestedExecutionLevel level="asInvoker" uiAccess="false" />
+			</requestedPrivileges>
+		</security>
+	</trustInfo>
+
+	<!-- 
+    Cấu hình hiển thị DPI-aware để giao diện WinForms rõ nét trên màn hình độ phân giải cao
+    (Hỗ trợ Windows 10/11, đa màn hình)
+  -->
+	<application xmlns="urn:schemas-microsoft-com:asm.v3">
+		<windowsSettings>
+			<!-- Bật DPI-Aware chuẩn cũ -->
+			<dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true/pm</dpiAware>
+			<!-- Bật DPI-Aware chuẩn mới PerMonitorV2 -->
+			<dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitorV2</dpiAwareness>
+		</windowsSettings>
+	</application>
+
+	<!-- 
+    Khai báo tương thích với các phiên bản Windows (giúp tránh hiển thị kiểu cũ)
+  -->
+	<compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+		<application>
+			<!-- Các phiên bản Windows hỗ trợ -->
+			<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+			<!-- Windows 10 -->
+			<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />
+			<!-- Windows 8.1 -->
+			<supportedOS Id="{4f476546-9370-4d45-bc3e-6c5b8e9e7b1d}" />
+			<!-- Windows 8 -->
+			<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />
+			<!-- Windows 7 -->
+		</application>
+	</compatibility>
+
+	<!-- 
+    Khai báo theme để sử dụng style mới (không bị giao diện cổ điển)
+  -->
+	<dependency>
+		<dependentAssembly>
+			<assemblyIdentity
+				type="win32"
+				name="Microsoft.Windows.Common-Controls"
+				version="6.0.0.0"
+				processorArchitecture="*"
+				publicKeyToken="6595b64144ccf1df"
+				language="*"/>
+		</dependentAssembly>
+	</dependency>
+
+</assembly>
