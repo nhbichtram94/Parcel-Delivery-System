@@ -1,86 +1,194 @@
 # Software Requirements Specification (SRS)
 
-# 1. Introduction
+# Parcel Delivery Management System
 
-The Parcel Delivery Management System is developed using C# WinForms and MongoDB to support parcel delivery management.
+---
 
-# 2. System Overview
+## 1. Introduction
 
-The system consists of three user roles:
+### 1.1 Purpose
 
-- Administrator
-- Customer
-- Shipper
+This document specifies the functional and non-functional requirements of the Parcel Delivery Management System. It serves as a reference for system development, testing, and future maintenance.
 
-# 3. Functional Requirements
+### 1.2 Project Scope
 
-## FR-01 Login
+The Parcel Delivery Management System is a desktop application that manages parcel delivery operations. The system supports three user roles: Administrator, Customer, and Shipper. Users can create delivery orders, assign shipments, update delivery status, manage payments, and perform backup and restore operations.
 
-The system shall allow users to log in using a username and password.
+---
 
-## FR-02 User Management
+## 2. Overall Description
+
+### 2.1 Product Perspective
+
+The application is developed using C# WinForms with MongoDB as the database. It provides a centralized platform for parcel delivery management.
+
+### 2.2 User Roles
+
+#### Administrator
+
+- Manage user accounts
+- Manage delivery orders
+- Assign orders to shippers
+- Manage payment information
+- Backup and restore database
+- View delivery statistics
+
+#### Customer
+
+- Register an account
+- Login
+- Create delivery orders
+- Track delivery status
+- Update personal information
+
+#### Shipper
+
+- View assigned orders
+- Search and filter orders
+- Update delivery status
+- Confirm payment
+- Export delivery reports to CSV
+
+---
+
+## 3. Functional Requirements
+
+### FR-01 User Authentication
+
+The system shall allow users to log in using a valid username and password.
+
+### FR-02 User Registration
+
+The system shall allow customers to register a new account by providing personal information.
+
+### FR-03 User Management
 
 The administrator shall be able to:
 
 - Create users
 - Edit users
 - Delete users
-- Lock and unlock accounts
+- Lock or unlock user accounts
+- Search users
 
-## FR-03 Order Management
+### FR-04 Order Management
 
 The administrator shall be able to:
 
-- View orders
+- View all orders
 - Search orders
-- Update order status
 - Filter orders
+- Update order status
 
-## FR-04 Shipper Assignment
+### FR-05 Delivery Assignment
 
-The administrator shall assign delivery orders to shippers.
+The administrator shall assign one or more delivery orders to a shipper.
 
-## FR-05 Payment Management
+### FR-06 Shipment Tracking
 
-The administrator shall update payment status and export invoices.
+Customers shall be able to monitor the current status of their delivery orders.
 
-## FR-06 Backup & Restore
+### FR-07 Payment Management
+
+The system shall record payment information and allow administrators or shippers to update payment status.
+
+### FR-08 Backup and Restore
 
 The administrator shall backup and restore MongoDB data.
 
-## FR-07 Create Order
+### FR-09 CSV Export
 
-Customers shall create parcel delivery orders.
+The shipper shall export assigned delivery orders into CSV format.
 
-## FR-08 Track Order
+### FR-10 Profile Management
 
-Customers shall monitor shipment status.
+Customers shall update their personal information including name, phone number, email, and address.
 
-## FR-09 Update Profile
+---
 
-Customers shall update personal information.
+## 4. Non-functional Requirements
 
-## FR-10 Delivery Management
+### Performance
 
-Shippers shall:
+- The system should respond to user requests within a reasonable time under normal operating conditions.
 
-- View assigned orders
-- Update delivery status
-- Confirm payment
-- Export CSV reports
+### Security
 
-# 4. Non-functional Requirements
+- Users must authenticate before accessing the system.
+- Access permissions are controlled based on user roles.
 
-- Windows desktop application
-- MongoDB database
-- Role-based authorization
-- Responsive user interface
-- Reliable data storage
+### Reliability
 
-# 5. Technology
+- Data shall be stored in MongoDB.
+- Backup and restore functions shall protect against data loss.
 
-- C#
-- .NET WinForms
-- MongoDB
-- Studio 3T
-- Visual Studio 2022
+### Usability
+
+- The interface should be simple and easy to use.
+- Functions should be organized according to user roles.
+
+### Compatibility
+
+The application supports:
+
+- Windows 10
+- Windows 11
+
+---
+
+## 5. Database Overview
+
+The system stores data in MongoDB.
+
+Main collections include:
+
+- Users
+- Orders
+- Payments
+- Assignments
+
+The database supports CRUD operations through the MongoDB.Driver library.
+
+---
+
+## 6. Technology Stack
+
+| Component | Technology |
+|-----------|------------|
+| Programming Language | C# |
+| Framework | .NET WinForms |
+| Database | MongoDB |
+| Database Tool | Studio 3T |
+| IDE | Visual Studio 2022 |
+
+---
+
+## 7. System Features
+
+| Feature | Admin | Customer | Shipper |
+|----------|:----:|:--------:|:-------:|
+| Login | ✓ | ✓ | ✓ |
+| Register | | ✓ | |
+| Manage Users | ✓ | | |
+| Manage Orders | ✓ | | |
+| Create Orders | | ✓ | |
+| Track Orders | | ✓ | |
+| Assign Shippers | ✓ | | |
+| Update Delivery Status | | | ✓ |
+| Payment Management | ✓ | | ✓ |
+| Backup & Restore | ✓ | | |
+| Export CSV | | | ✓ |
+
+---
+
+## 8. Assumptions and Constraints
+
+### Assumptions
+
+- MongoDB server is available.
+- Users have valid accounts before accessing protected functions.
+
+### Constraints
+
+- The application is designed for Windows desktop only.
+- Internet-based features such as online payment and GPS tracking are not included.
