@@ -1,148 +1,160 @@
 # Parcel Delivery Management System
 
-A desktop application developed using **C# WinForms** and **MongoDB** to manage parcel delivery operations. The system supports shipment creation, order tracking, shipper assignment, payment management, and user administration.
+A desktop application developed for the **NoSQL Database** course using **MongoDB**, **Studio 3T**, and **C# WinForms**. The system supports parcel delivery management, including user management, order processing, shipment tracking, payment management, and database backup/restore.
 
 ---
 
-## Overview
+## Project Overview
 
-The Parcel Delivery Management System is designed to simplify parcel delivery operations for logistics companies. It allows customers to create and track delivery orders, administrators to manage shipments and assign shippers, and shippers to update delivery progress efficiently.
+This project was developed as part of the **NoSQL Database** course, combining **MongoDB**, **Studio 3T**, and **C# WinForms** to build a Parcel Delivery Management System.
 
-This repository contains both the application source code and the business analysis artifacts created during system analysis and design.
+The application supports managing delivery orders, users, shippers, and tracking parcel delivery status through a role-based management system.
 
 ---
 
-## Features
+## Objectives
 
-### Customer
-
-- Register and log in
-- Create delivery orders
-- Track shipment status
-- View delivery history
-- Submit service ratings
-
-### Admin
-
-- Manage users
-- Manage delivery orders
-- Assign shippers
-- Update shipment status
-- Manage payments
-- Backup and restore database
-
-### Shipper
-
-- View assigned deliveries
-- Update delivery status
-- Complete deliveries
-- Export delivery reports
+- Learn and apply Studio 3T for MongoDB administration.
+- Design a NoSQL database for a parcel delivery management system.
+- Develop a desktop application using C# WinForms.
+- Implement CRUD operations, data queries, statistics, and database backup/restore.
 
 ---
 
 ## Tech Stack
 
 | Category | Technology |
-|----------|------------|
+|-----------|------------|
 | Language | C# |
 | Framework | .NET WinForms |
 | Database | MongoDB |
 | Database Tool | Studio 3T |
-| IDE | Visual Studio |
+| Driver | MongoDB.Driver |
+| IDE | Visual Studio 2022 |
 
 ---
 
-## Project Architecture
+## System Features
 
-```
-GUI
-│
-├── Business Logic Layer (BLL)
-│
-├── Data Access Layer (DAL)
-│
-├── Data Transfer Objects (DTO)
-│
-└── MongoDB
-```
+### Administrator
 
----
+- Manage user accounts (User, Shipper, Admin)
+- Manage all delivery orders
+- Assign orders to shippers
+- Backup and restore database
+- View delivery statistics
 
-## Business Analysis Artifacts
+### Customer
 
-This project also includes business analysis documentation created during the system analysis phase.
+- Register and log in
+- Create delivery orders
+- Track order status
+- View delivery history
 
-- Business Requirements Document (BRD)
-- Software Requirements Specification (SRS)
-- User Stories
-- Use Case Specifications
-- BPMN Diagrams
-- UML Diagrams
-- Entity Relationship Diagram (ERD)
+### Shipper
+
+- View assigned delivery orders
+- Update delivery status
+- Confirm payment
+- Export delivery reports to CSV
 
 ---
 
 ## Database Design
 
-### Main Collections
+The system consists of three main collections:
 
-- Users
-- Orders
+- **NguoiDung** – Stores information about customers, administrators, and shippers.
+- **DonHang** – Stores parcel order information, delivery status, and payment status.
+- **SanPham** – Stores product information embedded within each order.
 
-### Data Modeling
-
-**Embedded Documents**
-
-- Sender Information
-- Receiver Information
-- Parcel Information
-
-**References**
-
-- Customer
-- Admin
-- Shipper
+The database design combines **Embedded Documents** and **References** to optimize storage and query performance.
 
 ---
 
-## Repository Structure
+## MongoDB Connection
 
+```csharp
+var client = new MongoClient("mongodb://localhost:27017");
+var database = client.GetDatabase("GiaoNhanBuuPham");
+var collection = database.GetCollection<DonHang_DTO>("DonHang");
 ```
-Parcel-Delivery-System
-│
-├── BLL/
-├── DAL/
-├── DTO/
-├── GUI/
-├── docs/
-├── diagrams/
-├── screenshots/
-├── database/
-├── README.md
-└── QuanLyGiaoNhanBuuPham.sln
-```
+
+---
+
+## CRUD Operations
+
+- **Create** – Create new delivery orders
+- **Read** – Retrieve parcel order information
+- **Update** – Update delivery and payment status
+- **Delete** – Delete delivery orders
+
+---
+
+## Documentation
+
+Detailed project documentation is available in the **docs** folder.
+
+- Business Requirements Document (BRD)
+- Software Requirements Specification (SRS)
+- User Stories
+- Use Case Specification
 
 ---
 
 ## Screenshots
 
-Screenshots of the application interface will be added here.
+### Login
 
-- Login
-- Dashboard
-- Order Management
-- Shipment Tracking
-- Payment Management
+![Login](screenshots/login-screen.png)
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### User Management
+
+![User Management](screenshots/user-management.png)
+
+### Order Management
+
+![Order Management](screenshots/order-management.png)
+
+### Shipper Assignment
+
+![Shipper Assignment](screenshots/shipper-assignment.png)
+
+### Payment Management
+
+![Payment Management](screenshots/payment-management.png)
+
+### Create Delivery Order
+
+![Create Order](screenshots/create-order.png)
+
+### Shipper Dashboard
+
+![Shipper Dashboard](screenshots/shipper-dashboard.png)
+
+---
+
+## Results
+
+- Successfully developed a parcel delivery management system.
+- Successfully connected C# WinForms with MongoDB.
+- Implemented complete CRUD operations with MongoDB.
+- Implemented shipment tracking, payment management, and role-based access control.
+- Implemented database backup and restore.
+- Developed an intuitive WinForms user interface.
 
 ---
 
 ## Future Improvements
 
-- Email notifications
-- Real-time shipment tracking
-- QR code support
-- Mobile application
-- Dashboard analytics
+- Optimize performance for large datasets.
+- Develop a RESTful API using ASP.NET Core.
+- Build a web or mobile version.
+- Integrate real-time parcel tracking.
 
 ---
 
@@ -150,6 +162,6 @@ Screenshots of the application interface will be added here.
 
 **Nguyễn Hoàng Bích Trâm**
 
-Bachelor of Information Technology
+Business Analyst | .NET Developer
 
-Interested in Business Analysis, System Analysis, and Software Development.
+GitHub: https://github.com/nhbichtram94
