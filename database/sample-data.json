@@ -1,0 +1,174 @@
+use GiaoNhanBuuPham
+
+db.SanPham.insertMany([
+  { "MaSanPham": "SP001", "tenSanPham": "Chuột Logitech M331", "soLuong": 120, "trongLuong": 0.085, "giaTri": 350000, "ghiChu": "Hàng chính hãng" },
+  { "MaSanPham": "SP002", "tenSanPham": "Bàn phím Keychron K2", "soLuong": 45, "trongLuong": 0.95, "giaTri": 2200000, "ghiChu": "Switch Brown" },
+  { "MaSanPham": "SP003", "tenSanPham": "Tai nghe Sony WH-1000XM5", "soLuong": 25, "trongLuong": 0.25, "giaTri": 7900000, "ghiChu": "Chống ồn chủ động" },
+  { "MaSanPham": "SP004", "tenSanPham": "Loa Bluetooth JBL Flip 6", "soLuong": 50, "trongLuong": 0.55, "giaTri": 2200000, "ghiChu": "Kháng nước" },
+  { "MaSanPham": "SP005", "tenSanPham": "Webcam Logitech C920", "soLuong": 35, "trongLuong": 0.2, "giaTri": 1800000, "ghiChu": "Full HD" },
+  { "MaSanPham": "SP006", "tenSanPham": "Ổ cứng SSD Samsung 1TB", "soLuong": 40, "trongLuong": 0.1, "giaTri": 3000000, "ghiChu": "Tốc độ cao" },
+  { "MaSanPham": "SP007", "tenSanPham": "USB Kingston 64GB", "soLuong": 80, "trongLuong": 0.02, "giaTri": 200000, "ghiChu": "Tiện dụng" },
+  { "MaSanPham": "SP008", "tenSanPham": "Màn hình LG 27 inch", "soLuong": 15, "trongLuong": 4.5, "giaTri": 7000000, "ghiChu": "IPS, 75Hz" },
+  { "MaSanPham": "SP009", "tenSanPham": "Tai nghe AirPods Pro", "soLuong": 20, "trongLuong": 0.05, "giaTri": 6000000, "ghiChu": "Chống ồn chủ động" },
+  { "MaSanPham": "SP010", "tenSanPham": "Bàn phím cơ Razer BlackWidow", "soLuong": 30, "trongLuong": 1.2, "giaTri": 2500000, "ghiChu": "Switch Green" }
+]);
+ 
+db.NguoiDung.insertMany([
+  {
+    "hoTen": "Admin Master",
+    "soDienThoai": "0901234567",
+    "email": "admin@example.com",
+    "diaChiChiTiet": "1 Đường Admin",
+    "phuongXa": "Phường 1",
+    "quanHuyen": "Quận 1",
+    "tinhThanh": "TP HCM",
+    "loaiNguoiDung": "Admin",
+    "tenDangNhap": "admin",
+    "matKhauHash": "admin",
+    "phanQuyen": "full",
+    "trangThai": true
+  },
+  { "hoTen": "Nguyen Van A", "soDienThoai": "0901000001", "email": "a.nguyen@example.com", "diaChiChiTiet": "123 Đường A", "phuongXa": "P1", "quanHuyen": "Q1", "tinhThanh": "TP HCM", "loaiNguoiDung": "KhachHang", "tenDangNhap": "khach1", "matKhauHash": "123", "phanQuyen": "user", "trangThai": true },
+  { "hoTen": "Tran Thi B", "soDienThoai": "0901000002", "email": "b.tran@example.com", "diaChiChiTiet": "45 Đường B", "phuongXa": "P2", "quanHuyen": "Q2", "tinhThanh": "Hà Nội", "loaiNguoiDung": "KhachHang", "tenDangNhap": "khach2", "matKhauHash": "123", "phanQuyen": "user", "trangThai": true },
+  { "hoTen": "Le Van C", "soDienThoai": "0901000003", "email": "c.le@example.com", "diaChiChiTiet": "78 Đường C", "phuongXa": "P3", "quanHuyen": "Q3", "tinhThanh": "Đà Nẵng", "loaiNguoiDung": "KhachHang", "tenDangNhap": "khach3", "matKhauHash": "123", "phanQuyen": "user", "trangThai": true },
+  { "hoTen": "Pham Thi D", "soDienThoai": "0901000004", "email": "d.pham@example.com", "diaChiChiTiet": "9 Đường D", "phuongXa": "P4", "quanHuyen": "Q4", "tinhThanh": "TP HCM", "loaiNguoiDung": "KhachHang", "tenDangNhap": "khach4", "matKhauHash": "123", "phanQuyen": "user", "trangThai": true },
+  { "hoTen": "Nguyen Van E", "soDienThoai": "0901000005", "email": "e.nguyen@example.com", "diaChiChiTiet": "11 Đường E", "phuongXa": "P5", "quanHuyen": "Q5", "tinhThanh": "Hà Nội", "loaiNguoiDung": "KhachHang", "tenDangNhap": "khach5", "matKhauHash": "123", "phanQuyen": "user", "trangThai": true },
+  { "hoTen": "Tran Thi F", "soDienThoai": "0901000006", "email": "f.tran@example.com", "diaChiChiTiet": "22 Đường F", "phuongXa": "P6", "quanHuyen": "Q6", "tinhThanh": "Đà Nẵng", "loaiNguoiDung": "KhachHang", "tenDangNhap": "khach6", "matKhauHash": "123", "phanQuyen": "user", "trangThai": true },
+  { "hoTen": "Le Van G", "soDienThoai": "0901000007", "email": "g.le@example.com", "diaChiChiTiet": "33 Đường G", "phuongXa": "P7", "quanHuyen": "Q7", "tinhThanh": "TP HCM", "loaiNguoiDung": "KhachHang", "tenDangNhap": "khach7", "matKhauHash": "123", "phanQuyen": "user", "trangThai": true },
+  { "hoTen": "Pham Thi H", "soDienThoai": "0901000008", "email": "h.pham@example.com", "diaChiChiTiet": "44 Đường H", "phuongXa": "P8", "quanHuyen": "Q8", "tinhThanh": "Hà Nội", "loaiNguoiDung": "KhachHang", "tenDangNhap": "khach8", "matKhauHash": "123", "phanQuyen": "user", "trangThai": true },
+  { "hoTen": "Nguyen Van I", "soDienThoai": "0901000009", "email": "i.nguyen@example.com", "diaChiChiTiet": "55 Đường I", "phuongXa": "P9", "quanHuyen": "Q9", "tinhThanh": "Đà Nẵng", "loaiNguoiDung": "KhachHang", "tenDangNhap": "khach9", "matKhauHash": "123", "phanQuyen": "user", "trangThai": true },
+  {
+    "hoTen": "Shipper Nguyễn Minh",
+    "soDienThoai": "0902000001",
+    "email": "shipper1@example.com",
+    "diaChiChiTiet": "12 Đường 3/2",
+    "phuongXa": "P12",
+    "quanHuyen": "Q10",
+    "tinhThanh": "TP HCM",
+    "loaiNguoiDung": "Shipper",
+    "tenDangNhap": "shipper1",
+    "matKhauHash": "123",
+    "phanQuyen": "shipper",
+    "trangThai": true,
+    "trangThaiShipper": "Rảnh",
+    "soLuongDonHangDangGiao": 0
+  },
+  {
+    "hoTen": "Shipper Trần Hoàng",
+    "soDienThoai": "0902000002",
+    "email": "shipper2@example.com",
+    "diaChiChiTiet": "45 Đường Lý Thái Tổ",
+    "phuongXa": "P7",
+    "quanHuyen": "Q10",
+    "tinhThanh": "TP HCM",
+    "loaiNguoiDung": "Shipper",
+    "tenDangNhap": "shipper2",
+    "matKhauHash": "123",
+    "phanQuyen": "shipper",
+    "trangThai": true,
+    "trangThaiShipper": "Rảnh",
+    "soLuongDonHangDangGiao": 0
+  },
+  {
+    "hoTen": "Shipper Lê Thanh Long",
+    "soDienThoai": "0902000003",
+    "email": "shipper3@example.com",
+    "diaChiChiTiet": "88 Đường Hoàng Sa",
+    "phuongXa": "P8",
+    "quanHuyen": "Q3",
+    "tinhThanh": "TP HCM",
+    "loaiNguoiDung": "Shipper",
+    "tenDangNhap": "shipper3",
+    "matKhauHash": "123",
+    "phanQuyen": "shipper",
+    "trangThai": true,
+    "trangThaiShipper": "Rảnh",
+    "soLuongDonHangDangGiao": 0
+  },
+  {
+    "hoTen": "Shipper Phạm Bảo Phúc",
+    "soDienThoai": "0902000004",
+    "email": "shipper4@example.com",
+    "diaChiChiTiet": "21 Đường Võ Văn Tần",
+    "phuongXa": "P6",
+    "quanHuyen": "Q3",
+    "tinhThanh": "TP HCM",
+    "loaiNguoiDung": "Shipper",
+    "tenDangNhap": "shipper4",
+    "matKhauHash": "123",
+    "phanQuyen": "shipper",
+    "trangThai": true,
+    "trangThaiShipper": "Rảnh",
+    "soLuongDonHangDangGiao": 0
+  },
+  {
+    "hoTen": "Shipper Đỗ Anh Tú",
+    "soDienThoai": "0902000005",
+    "email": "shipper5@example.com",
+    "diaChiChiTiet": "9 Đường Tôn Đản",
+    "phuongXa": "P13",
+    "quanHuyen": "Q4",
+    "tinhThanh": "TP HCM",
+    "loaiNguoiDung": "Shipper",
+    "tenDangNhap": "shipper5",
+    "matKhauHash": "123",
+    "phanQuyen": "shipper",
+    "trangThai": true,
+    "trangThaiShipper": "Rảnh",
+    "soLuongDonHangDangGiao": 0
+  }
+]);
+ 
+let khach = db.NguoiDung.find({ loaiNguoiDung: "KhachHang" }).toArray();
+let sp = db.SanPham.find().toArray();
+let nhanvien = db.NguoiDung.find({ loaiNguoiDung: "Admin" }).toArray();
+
+for (let i=0; i<10; i++) {
+    db.DonHang.insertOne({
+        "maDonHang": "DH00" + (i+1),
+        "idNguoiGui": khach[i % khach.length]._id,
+        "idNguoiNhan": khach[(i+1) % khach.length]._id,
+        "idNguoiPhuTrach": nhanvien[0]._id,
+        "nguoiGuiThongTin": {
+            "hoTen": khach[i % khach.length].hoTen,
+            "soDienThoai": khach[i % khach.length].soDienThoai,
+            "email": khach[i % khach.length].email,
+            "diaChiChiTiet": khach[i % khach.length].diaChiChiTiet,
+            "phuongXa": khach[i % khach.length].phuongXa,
+            "quanHuyen": khach[i % khach.length].quanHuyen,
+            "tinhThanh": khach[i % khach.length].tinhThanh
+        },
+        "nguoiNhanThongTin": {
+            "hoTen": khach[(i+1) % khach.length].hoTen,
+            "soDienThoai": khach[(i+1) % khach.length].soDienThoai,
+            "email": khach[(i+1) % khach.length].email,
+            "diaChiChiTiet": khach[(i+1) % khach.length].diaChiChiTiet,
+            "phuongXa": khach[(i+1) % khach.length].phuongXa,
+            "quanHuyen": khach[(i+1) % khach.length].quanHuyen,
+            "tinhThanh": khach[(i+1) % khach.length].tinhThanh
+        },
+        "danhSachSanPham": [
+            { "MaSanPham": sp[i % sp.length].MaSanPham, "tenSanPham": sp[i % sp.length].tenSanPham, "soLuong": 1, "trongLuong": sp[i % sp.length].trongLuong, "giaTri": sp[i % sp.length].giaTri }
+        ],
+        "tongSoLuongSanPham": 1,
+        "tongTrongLuong": sp[i % sp.length].trongLuong,
+        "tongGiaTriSanPham": sp[i % sp.length].giaTri,
+        "phiVanChuyen": 50000,
+        "tongTien": sp[i % sp.length].giaTri + 50000,
+        "hinhThucThanhToan": "COD",
+        "daThanhToan": false,
+        "nguoiPhuTrachTen": nhanvien[0].hoTen,
+        "trangThai": "Đang giao",
+        "ngayTaoDon": new Date(),
+        "ngayCapNhatCuoi": new Date(),
+        "ghiChuDonHang": "Giao giờ hành chính",
+        "yeuCauDacBiet": "Liên hệ trước khi giao",
+        "diemDichVu": 5,
+        "binhLuanDichVu": "Nhanh chóng, nhiệt tình",
+        "ngayDanhGiaDichVu": new Date()
+    });
+}
+
+db.NguoiDung.find().pretty()
+db.SanPham.find().pretty()
+db.DonHang.find().pretty()
