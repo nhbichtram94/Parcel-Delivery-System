@@ -165,3 +165,5 @@ Detailed project documentation is available in the **docs** folder.
 Business Analyst | .NET Developer
 
 GitHub: https://github.com/nhbichtram94
+
+This repository is maintained as part of my personal portfolio. The project was completed as a university team project.
