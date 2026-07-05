@@ -1,67 +1,32 @@
 # Database
 
-This folder contains the database design and sample data for the Parcel Delivery Management System.
-
-## Database
-
-- MongoDB
-- Studio 3T
+This project uses **MongoDB** as the NoSQL database and **Studio 3T** for database management.
 
 ## Main Collections
 
 ### NguoiDung
 
-Stores information about administrators, customers, and shippers.
-
-Main fields:
-
-- UserId
-- Username
-- Password
-- FullName
-- PhoneNumber
-- Email
-- Address
-- Role
-
----
+Stores user information, including administrators, customers, and shippers.
 
 ### DonHang
 
-Stores parcel delivery information.
-
-Main fields:
-
-- OrderId
-- Sender
-- Receiver
-- Products
-- Status
-- PaymentStatus
-- ShippingFee
-- TotalAmount
-- LastUpdated
-
----
+Stores parcel delivery information such as sender, receiver, order status, and payment status.
 
 ### SanPham
 
-Embedded document inside each order.
+Stores product information as embedded documents within each order.
 
-Main fields:
+## Database Operations
 
-- ProductName
-- Quantity
-- Weight
-- Price
+The application supports:
 
----
+- Create
+- Read
+- Update
+- Delete (CRUD)
 
-## Database Design
+using the **MongoDB.Driver** library.
 
-The project combines:
+## Backup & Restore
 
-- Embedded Documents
-- References
-
-to improve query performance while minimizing duplicated data.
+The system supports backing up and restoring MongoDB data through the administrator interface.
