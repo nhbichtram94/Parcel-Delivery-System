@@ -2,82 +2,104 @@
 
 ## Administrator
 
-### US-01 Login
-
-As an administrator,
-
-I want to log into the system,
-
-so that I can manage parcel delivery operations.
-
----
-
-### US-02 Manage Users
+### US-01 Manage Users
 
 As an administrator,
 
 I want to manage user accounts,
 
-so that only authorized users can access the system.
+so that I can control access to the system.
 
 ---
 
-### US-03 Manage Orders
+### US-02 Manage Orders
 
 As an administrator,
 
-I want to update delivery orders,
+I want to manage delivery orders,
 
-so that shipment information remains accurate.
+so that shipment information is always accurate.
 
 ---
 
-### US-04 Assign Shippers
+### US-03 Assign Shippers
 
 As an administrator,
 
 I want to assign orders to shippers,
 
-so that deliveries are processed efficiently.
+so that deliveries are completed efficiently.
 
 ---
 
-### US-05 Manage Payments
+### US-04 Backup Database
 
 As an administrator,
 
-I want to update payment status,
+I want to backup and restore the database,
 
-so that payment information is accurate.
+so that data can be recovered when necessary.
+
+---
 
 ## Customer
 
-### US-06 Register Account
+### US-05 Register Account
 
-...
+As a customer,
 
-### US-07 Login
+I want to register an account,
 
-...
+so that I can use the delivery service.
 
-### US-08 Create Order
+---
 
-...
+### US-06 Create Order
 
-### US-09 Track Order
+As a customer,
 
-...
+I want to create a delivery order,
+
+so that my parcel can be delivered.
+
+---
+
+### US-07 Track Order
+
+As a customer,
+
+I want to track my shipment,
+
+so that I know its current status.
+
+---
+
+### US-08 Update Profile
+
+As a customer,
+
+I want to update my personal information,
+
+so that my contact details remain accurate.
+
+---
 
 ## Shipper
 
-### US-10 View Assigned Orders
+### US-09 Update Delivery Status
 
-...
+As a shipper,
 
-### US-11 Update Delivery Status
+I want to update shipment status,
 
-...
+so that customers receive the latest delivery information.
 
-### US-12 Export CSV Report
+---
 
-...
+### US-10 Export CSV
+
+As a shipper,
+
+I want to export delivery reports,
+
+so that I can submit operational reports.
