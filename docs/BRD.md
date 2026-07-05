@@ -1,31 +1,30 @@
 # Business Requirements Document (BRD)
 
-# 1. Project Overview
+## 1. Project Overview
 
-The Parcel Delivery Management System is a desktop application developed to support parcel delivery operations. The system allows administrators, customers, and shippers to manage delivery activities, monitor shipment progress, process payments, and maintain user information.
+The Parcel Delivery Management System is a desktop application developed using C# WinForms and MongoDB to support parcel delivery operations. The system enables administrators, customers, and shippers to manage delivery activities, track shipment progress, process payments, and maintain user information.
 
-# 2. Business Problem
+## 2. Business Problem
 
-Traditional parcel management relies heavily on manual processes, making it difficult to track shipments, assign delivery tasks, and manage payment information efficiently. The organization requires a centralized system to improve operational efficiency and service quality.
+Manual parcel management makes it difficult to track deliveries, assign orders to shippers, and maintain consistent shipment information. A centralized management system is required to improve operational efficiency and reduce manual processing.
 
-# 3. Business Objectives
+## 3. Business Objectives
 
-- Simplify parcel delivery management.
-- Improve shipment tracking.
-- Support role-based access control.
-- Reduce manual administrative work.
-- Improve payment management.
-- Support data backup and recovery.
+- Manage parcel delivery orders efficiently.
+- Allow customers to track shipment status.
+- Support role-based access for administrators, customers, and shippers.
+- Manage delivery assignments and payment status.
+- Provide backup and restore functionality for data protection.
 
-# 4. Stakeholders
+## 4. Stakeholders
 
 - Administrator
 - Customer
 - Shipper
 
-# 5. Project Scope
+## 5. Project Scope
 
-The system provides the following features:
+### In Scope
 
 - User authentication
 - User management
@@ -34,20 +33,17 @@ The system provides the following features:
 - Shipment tracking
 - Payment management
 - Backup and restore
-- CSV export
+- Export delivery data to CSV
 
-# 6. Business Requirements
+### Out of Scope
 
-- The system shall support three user roles.
-- Customers shall be able to create delivery orders.
-- Administrators shall manage users and orders.
-- Shippers shall update delivery status.
-- The system shall maintain payment records.
-- The system shall support backup and restore operations.
+- Online payment gateway
+- Mobile application
+- GPS real-time tracking
 
-# 7. Success Criteria
+## 6. Business Requirements
 
-- Faster order processing.
-- Accurate shipment tracking.
-- Improved data management.
-- Reduced manual errors.
+- Customers can create and track delivery orders.
+- Administrators manage users, orders, payments, and delivery assignments.
+- Shippers update delivery status and payment information.
+- The system stores all delivery information in MongoDB.
