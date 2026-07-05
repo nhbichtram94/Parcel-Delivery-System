@@ -6,25 +6,32 @@ A desktop application developed for the **NoSQL Database** course using **MongoD
 
 ## Project Overview
 
-This project was developed as part of the **NoSQL Database** course, combining **MongoDB**, **Studio 3T**, and **C# WinForms** to build a Parcel Delivery Management System.
+This project was developed to explore MongoDB and Studio 3T while applying NoSQL database concepts to a real-world parcel delivery management system.
 
-The application supports managing delivery orders, users, shippers, and tracking parcel delivery status through a role-based management system.
+The application provides role-based access for three user types:
+
+- **Administrator**
+- **Customer**
+- **Shipper**
+
+Each role has dedicated features to support parcel delivery operations efficiently.
 
 ---
 
 ## Objectives
 
-- Learn and apply Studio 3T for MongoDB administration.
+- Learn and apply MongoDB using Studio 3T.
 - Design a NoSQL database for a parcel delivery management system.
 - Develop a desktop application using C# WinForms.
-- Implement CRUD operations, data queries, statistics, and database backup/restore.
+- Implement CRUD operations with MongoDB.
+- Support shipment tracking, payment management, and database backup/restore.
 
 ---
 
 ## Tech Stack
 
 | Category | Technology |
-|-----------|------------|
+|----------|------------|
 | Language | C# |
 | Framework | .NET WinForms |
 | Database | MongoDB |
@@ -38,9 +45,10 @@ The application supports managing delivery orders, users, shippers, and tracking
 
 ### Administrator
 
-- Manage user accounts (User, Shipper, Admin)
+- Manage user accounts (Admin, Customer, and Shipper)
 - Manage all delivery orders
 - Assign orders to shippers
+- Manage payment status
 - Backup and restore database
 - View delivery statistics
 
@@ -48,8 +56,9 @@ The application supports managing delivery orders, users, shippers, and tracking
 
 - Register and log in
 - Create delivery orders
-- Track order status
-- View delivery history
+- Track shipment status
+- View order history
+- Update personal information
 
 ### Shipper
 
@@ -62,13 +71,15 @@ The application supports managing delivery orders, users, shippers, and tracking
 
 ## Database Design
 
-The system consists of three main collections:
+The system uses **MongoDB** as the NoSQL database.
 
-- **NguoiDung** – Stores information about customers, administrators, and shippers.
+Main collections include:
+
+- **NguoiDung** – Stores information about administrators, customers, and shippers.
 - **DonHang** – Stores parcel order information, delivery status, and payment status.
 - **SanPham** – Stores product information embedded within each order.
 
-The database design combines **Embedded Documents** and **References** to optimize storage and query performance.
+The database combines **Embedded Documents** and **References** to improve storage efficiency and query performance.
 
 ---
 
@@ -76,7 +87,9 @@ The database design combines **Embedded Documents** and **References** to optimi
 
 ```csharp
 var client = new MongoClient("mongodb://localhost:27017");
+
 var database = client.GetDatabase("GiaoNhanBuuPham");
+
 var collection = database.GetCollection<DonHang_DTO>("DonHang");
 ```
 
@@ -84,16 +97,18 @@ var collection = database.GetCollection<DonHang_DTO>("DonHang");
 
 ## CRUD Operations
 
+The application supports complete CRUD functionality.
+
 - **Create** – Create new delivery orders
 - **Read** – Retrieve parcel order information
-- **Update** – Update delivery and payment status
-- **Delete** – Delete delivery orders
+- **Update** – Update delivery status and payment status
+- **Delete** – Remove delivery orders
 
 ---
 
 ## Documentation
 
-Detailed project documentation is available in the **docs** folder.
+Project documentation is available in the **docs** folder.
 
 - Business Requirements Document (BRD)
 - Software Requirements Specification (SRS)
@@ -104,7 +119,7 @@ Detailed project documentation is available in the **docs** folder.
 
 ## Screenshots
 
-### Login
+### Login Screen
 
 ![Login](screenshots/login-screen.png)
 
@@ -140,21 +155,22 @@ Detailed project documentation is available in the **docs** folder.
 
 ## Results
 
-- Successfully developed a parcel delivery management system.
-- Successfully connected C# WinForms with MongoDB.
-- Implemented complete CRUD operations with MongoDB.
-- Implemented shipment tracking, payment management, and role-based access control.
-- Implemented database backup and restore.
-- Developed an intuitive WinForms user interface.
+- Successfully developed a parcel delivery management system using MongoDB.
+- Connected C# WinForms with MongoDB successfully.
+- Implemented complete CRUD operations.
+- Applied role-based access control for three user roles.
+- Implemented shipment tracking and payment management.
+- Developed database backup and restore functionality.
+- Exported delivery reports to CSV.
 
 ---
 
 ## Future Improvements
 
 - Optimize performance for large datasets.
-- Develop a RESTful API using ASP.NET Core.
+- Develop RESTful APIs using ASP.NET Core.
 - Build a web or mobile version.
-- Integrate real-time parcel tracking.
+- Integrate real-time shipment tracking.
 
 ---
 
@@ -164,6 +180,4 @@ Detailed project documentation is available in the **docs** folder.
 
 Business Analyst | .NET Developer
 
-GitHub: https://github.com/nhbichtram94
-
-This repository is maintained as part of my personal portfolio. The project was completed as a university team project.
+> **Note:** This repository is maintained as part of my personal portfolio. The original application was developed as a university team project.
